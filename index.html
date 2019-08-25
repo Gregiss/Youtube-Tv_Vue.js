@@ -19,13 +19,16 @@
 <body>
     <div id="app" tabindex="-1"
     v-on:keyup="keyBoard($event)">
-    <div class="splash" v-if="!load">
-    </div>
+
+        <div class="splash" v-if="!load">
+        </div>
+
         <div class="left">
             <div class="logo"></div>
             <a v-for="youtubeLink in youtubeLinks " :class="youtubeLink.dentro ? 'active_link' : nothing() || youtubeLink.acessou ? 'active_link_bar' : ''" @click="acessar(youtubeLink)">
             <span><i :class="youtubeLink.have_icon ? youtubeLink.icon : ''"></i></span></a>
         </div>
+
         <!-- search -->
         <div class="center search" v-if="youtubeAcess.id == 0" tabindex="-1" @keyup="search($event)">
             <div v-if="termSearchs.length == 0">
@@ -35,26 +38,47 @@
                 <p class="input_seach" type="text">{{ termSearch.letter }}</p>
             </div>
         </div>
-        <div class="center search" tabindex="-1" v-else-if="youtubeAcess.id == 1">
-               <h1>Home</h1>
-               <!-- https://www.youtube.com/youtubei/v1/browse?key=AIzaSyDCU8hByM-4DrUqRUYnGn-3llEO78bcxq8 -->
-               <div class="recommend">
-                   <h1>Recomendados</h1>
-                   <div class="scroll" v-bind:style="{ transform: 'translateX(' + scrollX + '%)'}">
-                   <div class="videos" @mouseover="hoverOver(video)" v-for="video in videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items" :class="video.gridVideoRenderer.hover ? 'videos_ativo' : 'videos_inativo'">
-                       <div class="img_container">
-                        <img :src="video.gridVideoRenderer.thumbnail.thumbnails[2].url">
-                       </div>
-                       <div class="bottom">
-                           <h1>{{video.gridVideoRenderer.title.runs[0].text}}</h1>
-                           <p>Autor</p>
-                           <p>{{ video.gridVideoRenderer.viewCountText.runs[0].text }} * {{ video.gridVideoRenderer.publishedTimeText.runs[0].text }}</p>
-                       </div>
-                   </div>
-                </div>
+        
+        <div class="center search" v-else-if="youtubeAcess.id == 1">
+               <div class="tabs" v-for="generer in generers" :class="where == generer.id ? 'active_tab' : ''" @click="changeTab(generer.id)">
+                {{ generer.name }}
                </div>
-        </div>
-    </div>
+                <div class="recommend" v-if="where == 0">
+                            <h1>Recommend</h1>
+                            <div class="scroll" v-bind:style="{ transform: 'translateX(' + scrollX + '%)'}">
+                            <div class="videos" @mouseover="hoverOver(video)" v-for="video in videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items" :class="video.gridVideoRenderer.hover ? 'videos_ativo' : 'videos_inativo'">
+                                <div class="img_container">
+                                    <img :src="video.gridVideoRenderer.thumbnail.thumbnails[2].url">
+                                </div>
+                                <div class="bottom">
+                                    <h1>{{video.gridVideoRenderer.title.runs[0].text}}</h1>
+                                    <p>{{video.gridVideoRenderer.shortBylineText.runs[0].text}}</p>
+                                    <p>{{ video.gridVideoRenderer.viewCountText.runs[0].text }} * {{ video.gridVideoRenderer.publishedTimeText.runs[0].text }}</p>
+                                </div>
+                            </div>
+                 </div>
+
+                 <div class="recommend" v-if="where == 1">
+                            <h1>Latest</h1>
+                            <div class="scroll" v-bind:style="{ transform: 'translateX(' + scrollX + '%)'}">
+                            <div class="videos" @mouseover="hoverOver(video)" v-for="video in videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[1].shelfRenderer.content.horizontalListRenderer.items" :class="video.gridVideoRenderer.hover ? 'videos_ativo' : 'videos_inativo'">
+                                <div class="img_container">
+                                    <img :src="video.gridVideoRenderer.thumbnail.thumbnails[2].url">
+                                </div>
+                                <div class="bottom">
+                                    <h1>{{video.gridVideoRenderer.title.runs[0].text}}</h1>
+                                    <p>{{video.gridVideoRenderer.shortBylineText.runs[0].text}}</p>
+                                    <p>{{ video.gridVideoRenderer.viewCountText.runs[0].text }} * {{ video.gridVideoRenderer.publishedTimeText.runs[0].text }}</p>
+                                </div>
+                            </div>
+                </div>
+
+
+            </div>
+            </div>
+            </div>
+            </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./scripts/app.js"></script>

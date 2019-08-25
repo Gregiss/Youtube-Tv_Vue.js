@@ -2,6 +2,7 @@ var enter = new Audio("./audio/cross-enter.mp3" );
 var light = new Audio("./audio/same-light.mp3" );
 var toggle = new Audio("./audio/same-toggle.mp3" );
 var block = new Audio("./audio/same-heavy.mp3");
+var air = new Audio("./audio/airstream_move.mp3");
 
 function playToogle(){
 	toggle.play();
@@ -35,6 +36,14 @@ function playenter(){
 	}, 300);
 }
 
+function playair(){
+	air.play();
+	setTimeout(function(){
+    air.pause();
+    air.currentTime = 0;
+	}, 300);
+}
+
 var app = new Vue({
     el: "#app",
     data: {
@@ -49,7 +58,10 @@ var app = new Vue({
         videos: [],
         imVideo: -1,
         scrollX: 0,
-        load: false
+        load: false,
+        generers: [{"id": 0, "name": "Recommended"},{"id": 1, "name": "Latest"},{"id": 2, "name": "Music"},
+        {"id": 3, "name": "Entertainment"},{"id": 4, "name": "Gaming"}],
+        where: 0
     },
     mounted(){
         document.title = this.logo;
@@ -155,10 +167,10 @@ var app = new Vue({
                         this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items[i].gridVideoRenderer.hover = false
                     }
                     if(this.imVideo < max - 1){
-                        playlight()
+                        playair()
                         this.imVideo++
                         if(this.imVideo >= 1){
-                            this.scrollX = this.imVideo * 24.7 * -1
+                            this.scrollX = this.imVideo * 22.9 * -1
                         }
                     } else{
                         playBlock()
@@ -171,16 +183,16 @@ var app = new Vue({
                         this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items[i].gridVideoRenderer.hover = false
                     }
                     if(this.imVideo > 0){
-                        playlight()
+                        playair()
                         this.imVideo--
-                        this.scrollX = this.imVideo * 24.7 * -1
+                        this.scrollX = this.imVideo * 22.9 * -1
                     } else{
                         playBlock()
                     }
                     this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items[this.imVideo].gridVideoRenderer.hover = true
                 }
                 if(e.which == 27){
-                    playlight()
+                    playToogle()
                     for(var i = 0; i < this.youtubeLinks.length;i++){
                         this.youtubeLinks[i].dentro = false
                         this.youtubeLinks[i].acessou = false
@@ -221,6 +233,9 @@ var app = new Vue({
                     letter: " "
                 })
             }
+        },
+        changeTab(tab){
+            this.where = tab
         },
         nothing(){
             console.log("nothing")
