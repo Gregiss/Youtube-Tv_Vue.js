@@ -1,0 +1,246 @@
+:root{
+    --body: #2f2f2f;
+    --purple: #a38eee;
+    --green: #11adb0;
+    --blue: #1d2055;
+}
+
+#app, .center{
+    outline: none !important;
+    overflow: hidden;
+}
+
+body{
+    width:100%;
+    height:100%;
+    position:absolute;
+    font-family:'Ebrima';
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Chrome/Safari/Opera */
+       -khtml-user-select: none; /* Konqueror */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none;
+    -webkit-font-smoothing: antialiased !important;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    overflow: hidden;
+ }
+
+::-webkit-scrollbar {
+    width: 14px;
+    z-index: 10000;
+}
+::-webkit-scrollbar:hover{
+   -webkit-transition: 0.7s ease-in;
+    -moz-transition: 0.7s ease-in;
+    -o-transition: 0.7s ease-in;
+   background-color: rgba(0, 0, 0, 0.5);
+   z-index: 10000;	
+}
+::-webkit-scrollbar-thumb {
+   height: 6px;
+   border: 4px solid rgba(0, 0, 0, 0);
+   background-clip: padding-box;
+   -webkit-border-radius: 7px;
+   background-color: rgba(178, 178, 178, 0.7);
+   z-index: 10000;
+}
+::-webkit-scrollbar-button{
+   width: 0;
+   height: 0;
+   display: none;
+   z-index: 10000;
+}
+::-webkit-scrollbar-corner {
+   background-color: transparent;
+}
+
+body,html{
+    background-color: #000 !important;
+    color: #fff !important;
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+#app{
+    width: calc(100% - 17em);
+    height: 100%;
+    position: fixed;
+    background: var(--body);
+    left: 50%;
+    transform: translate(-50%);
+    top: 0%;
+    outline: none;
+}
+
+
+.left .logo{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 2rem;
+    width: 5rem;
+    background-image: url(//www.gstatic.com/ytlr/img/ytlogo-airstream_1080.png);
+    margin: 2.5rem 1.5rem 2.5rem 2rem;
+}
+
+.left a{
+    color: rgb(106, 106, 106);
+    padding: 0.975em 0 1.055em 3.475em;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    top: 1.5em;
+    display: block;
+}
+
+.left a span{
+    position: relative;
+    top: 0.2em;
+    left: -1.6em;
+}
+
+.active_link_bar{
+    color: #282828 !important;
+    background-color: #fff;
+}
+
+.left{
+    color: #fff;
+    font-size: 2em;
+    overflow: auto;
+    position: fixed;
+    height: 100%;
+    background: #282828;
+    box-shadow: 0 0 0.75rem 0 rgba(0,0,0,0.24), 0 0 0.75rem 0 rgba(0,0,0,0.48);
+}
+
+.center{
+    position: absolute;
+    width: calc(100% - 13em);
+    height: 100%;
+    left: 11em;
+    background: transparent;
+}
+
+.center h1{
+    padding: 1em;
+}
+
+input{
+    border: none;
+    outline: none;
+    display: inline-block;
+}
+
+.input_seach{
+    display: inline-block;
+    float: left;
+    font-size: 2em;
+    color: #fff;
+    top: 1em;
+    left: 1em;
+    position: relative;
+    color: #757575;
+}
+
+.search input{
+    padding: 1em;
+    background: transparent;
+    color: #757575;
+    font-size: 3em;
+}
+
+.active_link{
+    background: transparent !important;
+    color: #fff !important;
+}
+
+.videos .bottom h1, p{
+    padding: 0px;
+    position: relative;
+    left: 10px;
+    white-space: pre-wrap;
+    font-size: 1.5em;
+}
+
+p{
+    font-size: 1.3em;
+}
+
+.videos{
+    position: relative;
+    width: 400px;
+    height: 390px;
+    left: 20px;
+    display: inline-block;
+    margin-left: 20px;
+    overflow: hidden;
+    transition: 0.6s;
+}
+
+.videos_inativo{
+    color: #ccc !important;
+}
+
+.videos_ativo{
+    background-color: #ebebeb;
+    box-shadow: 0 0 0.75rem 0 rgba(0,0,0,0.24), 0 0.75rem 0.75rem 0 rgba(0,0,0,0.48);
+    color: #585252;
+    transform: scale(1.1);
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+.videos_inativo p{
+    color: #ddd;
+}
+
+.videos .img_container{
+    position: relative;
+    width: 100%;
+    height: 190px;
+    background: #000;
+}
+
+.videos .img_container img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.scroll{
+    max-width: 100vw;
+    white-space: nowrap;
+    transition: 0.7s ease-in;
+}
+
+
+@media screen and (max-width: 1000px){
+    .videos{
+        width: 300px;
+        height: 310px;
+    }
+    
+    .videos .bottom h1, p{
+        font-size: 0.9em !important;
+    }
+
+    .videos p{
+        font-size: 0.9em;
+    }
+
+    .input_seach{
+        font-size: 2em !important;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    #app{
+        width: 100%;
+    }
+
+    .center{
+        width: 100%;
+        left: 9em;
+    }
+}
