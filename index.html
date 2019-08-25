@@ -17,9 +17,10 @@
     <title>Youtube</title>
 </head>
 <body>
-    
     <div id="app" tabindex="-1"
     v-on:keyup="keyBoard($event)">
+    <div class="splash" v-if="!load">
+    </div>
         <div class="left">
             <div class="logo"></div>
             <a v-for="youtubeLink in youtubeLinks " :class="youtubeLink.dentro ? 'active_link' : nothing() || youtubeLink.acessou ? 'active_link_bar' : ''" @click="acessar(youtubeLink)">

@@ -48,11 +48,13 @@ var app = new Vue({
         termSearchs: [],
         videos: [],
         imVideo: -1,
-        scrollX: 0
+        scrollX: 0,
+        load: false
     },
     mounted(){
         document.title = this.logo;
         this.getJson()
+        this.load = true
     },
     methods: {
         getJson(){
