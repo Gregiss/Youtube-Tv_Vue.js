@@ -158,7 +158,7 @@ var app = new Vue({
                         playlight()
                         this.imVideo++
                         if(this.imVideo >= 1){
-                            this.scrollX = this.imVideo * 26.7 * -1
+                            this.scrollX = this.imVideo * 24.7 * -1
                         }
                     } else{
                         playBlock()
@@ -173,7 +173,7 @@ var app = new Vue({
                     if(this.imVideo > 0){
                         playlight()
                         this.imVideo--
-                        this.scrollX = this.imVideo * 26.7 * -1
+                        this.scrollX = this.imVideo * 24.7 * -1
                     } else{
                         playBlock()
                     }
