@@ -82,7 +82,7 @@
             </div>
         </div>
         
-        <div class="center search" @mouseover="hoverCenter()" v-if="!animeView">
+        <div class="center search" @mouseover="hoverCenter()" v-if="youtubeAcess.id == 1 && !animeView">
                <div class="tabs" v-for="generer in generers" :class="where == generer.id ? 'active_tab' : ''" @click="changeTab(generer.id)">
                 {{ generer.name }}
                </div>
