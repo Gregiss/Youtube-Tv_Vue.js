@@ -169,7 +169,7 @@ var app = new Vue({
                         playair()
                         this.imVideo++
                         if(this.imVideo >= 1){
-                            this.scrollX = this.imVideo * 1.1 * 23 * -1
+                            this.scrollX = this.imVideo * 1.1 * 20 * -1
                         }
                     } else{
                         playBlock()
@@ -184,7 +184,7 @@ var app = new Vue({
                     if(this.imVideo > 0){
                         playair()
                         this.imVideo--
-                        this.scrollX = this.imVideo * 1.1 * 23 * -1
+                        this.scrollX = this.imVideo * 1.1 * 20 * -1
                     } else{
                         playBlock()
                     }
