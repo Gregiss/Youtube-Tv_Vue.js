@@ -442,11 +442,11 @@ button:hover{
 }
 
 .white{
-    background: #cecece !important;
+    background: #f3f3f3 !important;
 }
 
 .white .videos{
-    background: var(--body);
+    background: #009688;
     color: #fff;
 }
 
@@ -455,17 +455,16 @@ button:hover{
 }
 
 .white .active_tab{
-    background: var(--body);
+    background: #009688;
     color: #fff;
 }
 
 .white .left{
-    background: #fff;
-    color: #151515;
+    background: #009688;
 }
 
 .white .active_link_bar{
-    background: var(--body);
+    background: #0f4843;
     color: #fff !important;
 }
 
@@ -474,11 +473,11 @@ button:hover{
 }
 
 .white .active_link{
-    color: #151515 !important;
+    color: #cecece !important;
 }
 
 .white .videos_ativo{
-    background: #151515;
+    background: #114641;
 }
 
 .anime_view .img_container{
