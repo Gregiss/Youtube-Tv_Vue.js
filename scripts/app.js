@@ -41,7 +41,7 @@ function playair(){
 	setTimeout(function(){
     air.pause();
     air.currentTime = 0;
-	}, 300);
+	}, 400);
 }
 
 var app = new Vue({
