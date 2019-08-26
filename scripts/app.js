@@ -178,7 +178,11 @@ var app = new Vue({
                 this.youtubeLinks[this.youtubeAcess.id].acessou = true
                 this.youtubeLinks[this.youtubeAcess.id].dentro = false
                 } else{
+                    this.youtubeAcess.dentro = true
+                    this.youtubeLinks[this.youtubeAcess.id].acessou = false
                     this.animeView = false
+                    this.youtubeLinks[this.youtubeAcess.id].acessou = false
+                    this.youtubeLinks[this.youtubeAcess.id].dentro = true
                 }
             }
             if(this.youtubeLinks[1].dentro){
@@ -233,7 +237,6 @@ var app = new Vue({
                     this.animeViewTs = this.videos[this.imVideo]
                 }
                 if(e.which == 27){
-                    if(!this.animeView){
                     playToogle()
                     for(var i = 0; i < this.youtubeLinks.length;i++){
                         this.youtubeLinks[i].dentro = false
@@ -247,9 +250,6 @@ var app = new Vue({
                     this.imVideo = -1
                     this.scrollX = 0
                 }
-            } else{
-                this.animeView = false
-            }
             
             }
         },
