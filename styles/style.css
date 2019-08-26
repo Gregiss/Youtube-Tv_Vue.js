@@ -410,7 +410,7 @@ p{
     height: 100vw;
 }
 
-.scroll .videos{
+.mobile .scroll .videos{
     width: 41vw !important;
     height: 75vw !important;
     padding: 3vw;
