@@ -130,6 +130,8 @@ body,html{
     height: 100%;
     left: 11em;
     background: transparent;
+    overflow-y: scroll !important;
+    overflow-y: hidden;
 }
 
 .center h1{

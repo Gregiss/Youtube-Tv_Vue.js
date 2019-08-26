@@ -66,6 +66,8 @@ var app = new Vue({
         searchAnimes: [],
         searchText: "",
         nightMode: true,
+        cor_primary: "",
+        cor_secundary: "",
         animeView: false,
         animeViewTs: [],
         logoAnimate: false
@@ -73,6 +75,8 @@ var app = new Vue({
     mounted(){
         document.title = this.logo;
         this.nightMode = localStorage.nightMode ? JSON.parse(localStorage.nightMode): []
+        this.cor_primary = localStorage.cor_primary ? JSON.parse(localStorage.cor_primary): []
+        this.cor_secundary = localStorage.cor_secundary ? JSON.parse(localStorage.cor_secundary): []
         this.getJson()
         this.load = true
         var width = screen.width
@@ -369,7 +373,11 @@ var app = new Vue({
         outLogo(){
             this.logoAnimate = false
         },
-        logoAnimate(){
+        saveColor(){
+            localStorage.cor_primary = JSON.stringify(this.cor_primary)
+            localStorage.cor_secundary = JSON.stringify(this.cor_secundary)
+        },
+        logoAnimatar(){
             if(this.mobile){
                 if(this.logoAnimate){
                     this.logoAnimate = false

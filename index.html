@@ -24,9 +24,9 @@
         <div class="splash" v-if="!load">
         </div>
 
-        <div class="left" @mouseover="hoverLeft()">
-            <div class="logo" @click="logoAnimate" @mouseover="hoverLogo()" @mouseout="outLogo()" :class="logoAnimate ? 'logo_ativa' : '' "></div>
-            <a v-for="youtubeLink in youtubeLinks " :class="youtubeLink.dentro ? 'active_link' : nothing() || youtubeLink.acessou ? 'active_link_bar' : ''" @click="acessar(youtubeLink)">
+        <div class="left" @mouseover="hoverLeft()" :style="{ backgroundColor: cor_primary } ">
+            <div class="logo" @click="logoAnimatar" @mouseover="hoverLogo()" @mouseout="outLogo()" :class="logoAnimate ? 'logo_ativa' : '' "></div>
+            <a :style="{ color: cor_secundary } " v-for="youtubeLink in youtubeLinks " :class="youtubeLink.dentro ? 'active_link' : nothing() || youtubeLink.acessou ? 'active_link_bar' : ''" @click="acessar(youtubeLink)">
             <span><i :class="youtubeLink.have_icon ? youtubeLink.icon : ''"></i></span></a>
         </div>
 
@@ -66,6 +66,11 @@
             <h1>Night mode</h1>
             <button v-if="nightMode" @click="nightModeA">Desativar</button>
             <button v-else="" @click="nightModeA">Ativar</button>
+            <h1>Personalize</h1>
+            <h1>Background</h1>
+            <input type="text" v-model="cor_primary" placeholder="#2f2f2f" @keyup="saveColor">
+            <h1>Fonte color</h1>
+            <input type="text" v-model="cor_secundary" placeholder="#fff" @keyup="saveColor">
 
         </div>
 
