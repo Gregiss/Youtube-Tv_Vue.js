@@ -92,6 +92,7 @@ var app = new Vue({
             link.acessou = true
             this.youtubeLinks[index] = link
             this.youtubeAcess.id = index
+            this.youtubeAcess.dentro = false
             localStorage.youtubeLinks = JSON.stringify(this.youtubeLinks)
         },
         keyBoard(e){
