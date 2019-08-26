@@ -143,6 +143,10 @@ input{
     color: #757575;
 }
 
+.mobile .input_seach{
+    font-size: 6vw !important;
+}
+
 .search input{
     padding: 1em;
     background: transparent;
@@ -341,6 +345,9 @@ p{
     .videos .img_container{
         height: 30vw;
     }
+
+    
+
 }
 
 .mobile .videos .bottom h1{
