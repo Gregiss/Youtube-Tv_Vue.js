@@ -215,24 +215,21 @@ p{
     transition: 0.5s cubic-bezier(0.4, 0, 1, 1);
 }
 
+.videos{
+    width: 300px;
+    height: 310px;
+}
 
-@media screen and (max-width: 1000px){
-    .videos{
-        width: 300px;
-        height: 310px;
-    }
-    
-    .videos .bottom h1, p{
-        font-size: 0.9em !important;
-    }
+.videos .bottom h1, p{
+    font-size: 0.9em !important;
+}
 
-    .videos p{
-        font-size: 0.9em;
-    }
+.videos p{
+    font-size: 1.1em !important;
+}
 
-    .input_seach{
-        font-size: 2em !important;
-    }
+.input_seach{
+    font-size: 2em !important;
 }
 
 .splash{
@@ -279,13 +276,13 @@ p{
     color: #2f2f2f;
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1000px){
     #app{
         width: 100%;
     }
 
     .center{
         width: 100%;
-        left: 9em;
+        left: 10em;
     }
 }
