@@ -46,32 +46,17 @@
                 <div class="recommend" v-if="where == 0">
                             <h1>Recommend</h1>
                             <div class="scroll" v-bind:style="{ transform: 'translateX(' + scrollX + '%)'}">
-                            <div class="videos" @mouseover="hoverOver(video)" v-for="video in videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items" :class="video.gridVideoRenderer.hover ? 'videos_ativo' : 'videos_inativo'">
+                            <div class="videos" @mouseover="hoverOver(video)" v-for="video in videos" :class="video.hover ? 'videos_ativo' : 'videos_inativo'">
                                 <div class="img_container">
-                                    <img :src="video.gridVideoRenderer.thumbnail.thumbnails[2].url">
+                                    <img :src="video.foto">
                                 </div>
                                 <div class="bottom">
-                                    <h1>{{video.gridVideoRenderer.title.runs[0].text}}</h1>
-                                    <p>{{video.gridVideoRenderer.shortBylineText.runs[0].text}}</p>
-                                    <p>{{ video.gridVideoRenderer.viewCountText.runs[0].text }} * {{ video.gridVideoRenderer.publishedTimeText.runs[0].text }}</p>
+                                    <h1>{{video.name}}</h1>
+                                    <p>{{video.autor}}</p>
+                                    <p>{{ video.views }} views * {{ video.date }}</p>
                                 </div>
                             </div>
                  </div>
-
-                 <div class="recommend" v-if="where == 1">
-                            <h1>Latest</h1>
-                            <div class="scroll" v-bind:style="{ transform: 'translateX(' + scrollX + 'vw)'}">
-                            <div class="videos" @mouseover="hoverOver(video)" v-for="video in videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[1].shelfRenderer.content.horizontalListRenderer.items" :class="video.gridVideoRenderer.hover ? 'videos_ativo' : 'videos_inativo'">
-                                <div class="img_container">
-                                    <img :src="video.gridVideoRenderer.thumbnail.thumbnails[4].url">
-                                </div>
-                                <div class="bottom">
-                                    <h1>{{video.gridVideoRenderer.title.runs[0].text}}</h1>
-                                    <p>{{video.gridVideoRenderer.shortBylineText.runs[0].text}}</p>
-                                    <p>{{ video.gridVideoRenderer.viewCountText.runs[0].text }} * {{ video.gridVideoRenderer.publishedTimeText.runs[0].text }}</p>
-                                </div>
-                            </div>
-                </div>
 
 
             </div>

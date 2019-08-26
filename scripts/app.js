@@ -52,7 +52,7 @@ var app = new Vue({
         {"name" : "search", "icon" : "fas fa-search", "have_icon" : true, "acessou" : false, "dentro": false},
         {"name" : "home", "icon" : "fas fa-home", "have_icon" : true, "acessou" : true,  "dentro": false}
         ],
-        logo: "Youtube",
+        logo: "NekoApp",
         youtubeAcess: {"id": 1, "dentro": false},
         termSearchs: [],
         videos: [],
@@ -76,7 +76,7 @@ var app = new Vue({
     },
     methods: {
         getJson(){
-            fetch("./videos.json")
+            fetch("./animes.json")
             .then(r => r.json())
             .then(json => {
             this.videos=json;
@@ -158,8 +158,11 @@ var app = new Vue({
                 this.youtubeAcess.dentro = true
                 this.youtubeLinks[this.youtubeAcess.id].acessou = false
                 this.youtubeLinks[this.youtubeAcess.id].dentro = true
+                for(var i = 0; i < this.videos.length; i++){
+                    this.videos[i].hover = false
+                }
                 this.imVideo = 0
-                this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items[this.imVideo].gridVideoRenderer.hover = true
+                this.videos[this.imVideo].hover = true
                 }
             }
             if(e.which == 27){
@@ -169,31 +172,31 @@ var app = new Vue({
             }
             if(this.youtubeLinks[1].dentro){
                 if(e.which == 39){
-                    var max = this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items.length
+                    var max = this.videos.length
                     console.log(max)
-                    for(var i = 0; i < this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items.length; i++){
-                        this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items[i].gridVideoRenderer.hover = false
+                    for(var i = 0; i < this.videos.length; i++){
+                        this.videos[i].hover = false
                     }
                     if(this.imVideo < max - 1){
                         playair()
                         this.imVideo++
                         if(this.imVideo >= 1){
-                            this.scrollX = this.imVideo * 1 * 3.7 * -1
+                            this.scrollX = this.imVideo * 1 * 9.7 * -1
                         }
                     } else{
                         playBlock()
                     }
-                    this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items[this.imVideo].gridVideoRenderer.hover = true
+                    this.videos[this.imVideo].hover = true
                 }
                 if(e.which == 37){
-                    var max = this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items.length
-                    for(var i = 0; i < this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items.length; i++){
-                        this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items[i].gridVideoRenderer.hover = false
+                    var max = this.videos.length
+                    for(var i = 0; i < this.videos.length; i++){
+                        this.videos[i].hover = false
                     }
                     if(this.imVideo > 0){
                         playair()
                         this.imVideo--
-                        this.scrollX = this.imVideo * 1 * 3.7 * -1
+                        this.scrollX = this.imVideo * 1 * 9.7 * -1
                     } else{
                         playToogle()
                         for(var i = 0; i < this.youtubeLinks.length;i++){
@@ -202,13 +205,13 @@ var app = new Vue({
                         }
                         this.youtubeAcess.dentro = false
                         this.youtubeLinks[this.youtubeAcess.id].acessou = true
-                        for(var i = 0; i < this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items.length; i++){
-                            this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items[i].gridVideoRenderer.hover = false
+                        for(var i = 0; i < this.videos.length; i++){
+                            this.videos[i].hover = false
                         }
                         this.imVideo = -1
                         this.scrollX = 0
                     }
-                    this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items[this.imVideo].gridVideoRenderer.hover = true
+                    this.videos[this.imVideo].hover = true
                 }
                 if(e.which == 27){
                     playToogle()
@@ -218,8 +221,8 @@ var app = new Vue({
                     }
                     this.youtubeAcess.dentro = false
                     this.youtubeLinks[this.youtubeAcess.id].acessou = true
-                    for(var i = 0; i < this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items.length; i++){
-                        this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items[i].gridVideoRenderer.hover = false
+                    for(var i = 0; i < this.videos.length; i++){
+                        this.videos[i].hover = false
                     }
                     this.imVideo = -1
                     this.scrollX = 0
@@ -228,17 +231,17 @@ var app = new Vue({
         },
         hoverOver(video){
             playair()
-            const index = this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items.indexOf(video)
+            const index = this.videos.indexOf(video)
             this.imVideo = index
             var width = screen.width
             if (width <= 800){
                 this.scrollX = 0
             } else{
-                this.scrollX = this.imVideo * 1 * 3.7 * -1
-                for(var i = 0; i < this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items.length; i++){
-                    this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items[i].gridVideoRenderer.hover = false
+                this.scrollX = this.imVideo * 1 * 9.7 * -1
+                for(var i = 0; i < this.videos.length; i++){
+                    this.videos[i].hover = false
                 }
-                this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items[index].gridVideoRenderer.hover = true
+                this.videos[this.imVideo].hover = true
             }  
         },
         search(e){

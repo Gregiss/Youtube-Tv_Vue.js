@@ -1,0 +1,82 @@
+[
+    {
+        "name" : "Boku no hero Academy",
+        "foto" : "https://sm.ign.com/ign_br/image/b/best-anime/best-anime-series-of-the-year-2018_qurx.jpg",
+        "autor" : "Kōhei Horikoshi",
+        "views" : 10,
+        "date" : "19 hours ago",
+        "hover": false
+    },
+    {
+        "name" : "Naruto Shippuden",
+        "foto" : "http://virgobrasil.com.br/wp-content/uploads/2016/10/naruto-shippuden-3.jpg",
+        "autor" : "Masashi Kishimoto",
+        "views" : 40,
+        "date" : "5 hours ago",
+        "hover": false
+    },
+    {
+        "name" : "Code Geass",
+        "foto" : "https://cdn.serounaosei.com/wp-content/uploads/20180109151952/code-geass.jpg",
+        "autor" : "Ichirō Ōkouchi",
+        "views" : 40,
+        "date" : "5 hours ago",
+        "hover": false
+    },
+    {
+        "name" : "Fairy Tail",
+        "foto" : "https://www.otakupt.com/wp-content/uploads/2018/10/Fairy-Tail-3-O-in%C3%ADcio-Epis%C3%B3dio-1-1.jpg",
+        "autor" : "Hiro Mashima",
+        "views" : 70,
+        "date" : "5 hours ago",
+        "hover": false
+    },
+    {
+        "name" : "Bleach",
+        "foto" : "https://dw9to29mmj727.cloudfront.net/promo/2016/5254-SeriesHeaders_BLH_2000x800v2.jpg",
+        "autor" : "Shueisha",
+        "views" : 20,
+        "date" : "5 hours ago",
+        "hover": false
+    },
+    {
+        "name" : "Bleach",
+        "foto" : "https://observatoriodocinema.bol.uol.com.br/wp-content/uploads/2019/04/1501972698-dragon-ball-2.jpg",
+        "autor" : "Akira Toriyama",
+        "views" : 560,
+        "date" : "5 hours ago",
+        "hover": false
+    },
+    {
+        "name" : "One Piece",
+        "foto" : "https://www.nerdsite.com.br/wp-content/uploads/2019/01/onepiece2.jpg",
+        "autor" : "Eiichiro Oda",
+        "views" : 960,
+        "date" : "5 hours ago",
+        "hover": false
+    },
+    {
+        "name" : "Attack on titan",
+        "foto" : "https://www.comboinfinito.com.br/principal/wp-content/uploads/2017/12/attack-on-titans.jpg",
+        "autor" : "Kodansha",
+        "views" : 870,
+        "date" : "5 hours ago",
+        "hover": false
+    },
+    {
+        "name" : "Boruto: Naruto Next Generations",
+        "foto" : "https://www.animalog.online/wp-content/uploads/2018/04/Boruto-cover-500x300.png",
+        "autor" : "Mikio Ikemoto",
+        "views" : 960,
+        "date" : "5 hours ago",
+        "hover": false
+    },
+    {
+        "name" : "Rurouni Kenshin",
+        "foto" : "https://www.otakupt.com/wp-content/uploads/2018/04/Mang%C3%A1-de-Samurai-X-regressa-em-Junho-1.jpg",
+        "autor" : "Nobuhiro Watsuki",
+        "views" : 260,
+        "date" : "5 hours ago",
+        "hover": false
+    }
+]

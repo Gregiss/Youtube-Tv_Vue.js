@@ -77,9 +77,9 @@ body,html{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
-    height: 2rem;
+    height: 7rem;
     width: 5rem;
-    background-image: url(//www.gstatic.com/ytlr/img/ytlogo-airstream_1080.png);
+    background-image: url('../img/logo.png');
     margin: 2.5rem 1.5rem 2.5rem 2rem;
 }
 
@@ -374,16 +374,16 @@ p{
     text-align: center;
     cursor: pointer;
     position: relative;
-    top: -6em;
+    top: -10em;
     left: 128px;
     display: inline-block;
     float: left
 }
 
 .mobile .left .logo{
-    left: 0.7em;
+    left: -0.7em;
     position: relative;
-    top: -1.3em;
+    top: -2.3em;
 }
 
 .mobile .left {
