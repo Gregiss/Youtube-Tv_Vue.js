@@ -176,7 +176,7 @@ var app = new Vue({
                         playair()
                         this.imVideo++
                         if(this.imVideo >= 1){
-                            this.scrollX = this.imVideo * 1.1 * 20 * -1
+                            this.scrollX = this.imVideo * 1 * 3.7 * -1
                         }
                     } else{
                         playBlock()
@@ -191,7 +191,7 @@ var app = new Vue({
                     if(this.imVideo > 0){
                         playair()
                         this.imVideo--
-                        this.scrollX = this.imVideo * 1.1 * 20 * -1
+                        this.scrollX = this.imVideo * 1 * 3.7 * -1
                     } else{
                         playBlock()
                     }
@@ -221,7 +221,7 @@ var app = new Vue({
             if (width <= 800){
                 this.scrollX = 0
             } else{
-                this.scrollX = this.imVideo * 1.1 * 20 * -1
+                this.scrollX = this.imVideo * 1 * 3.7 * -1
             }
             for(var i = 0; i < this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items.length; i++){
                 this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items[i].gridVideoRenderer.hover = false

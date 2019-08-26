@@ -213,12 +213,18 @@ p{
 
 
 .scroll{
-    max-width: 100%;
+    max-width: auto;
     position: absolute;
     white-space: nowrap;
     transition: 0.5s cubic-bezier(0.4, 0, 1, 1);
     overflow-x: auto;
     overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.mobile .scroll{
+    overflow-y: hidden;
+    overflow-x: auto;
 }
 
 .videos{
@@ -360,4 +366,54 @@ p{
 
 .mobile .videos .bottom p{
     font-size: 3.7vw !important;
+}
+
+.mobile .left a{
+    color: rgb(106, 106, 106);
+    padding: 1.3em 0 1.055em 1.275em;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    top: -6em;
+    left: 128px;
+    display: inline-block;
+    float: left
+}
+
+.mobile .left .logo{
+    left: 0.7em;
+    position: relative;
+    top: -1.3em;
+}
+
+.mobile .left {
+    font-size: 20px;
+    left: -47px;
+    width: 100%;
+    height: 66px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 10000000;
+    overflow: hidden !important;
+}
+
+.mobile .center{
+    height: calc(100% - 66px);
+    left: 0em;
+}
+
+.mobile .scroll{
+    white-space: normal;
+    overflow-y: scroll !important;
+    left: -2vw !important;
+    position: relative;
+    height: 100vw;
+}
+
+.scroll .videos{
+    width: 41vw !important;
+    height: 75vw !important;
+    padding: 3vw;
+    left: 0vw;
+    top: -2vw;
 }
