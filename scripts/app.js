@@ -322,16 +322,7 @@ var app = new Vue({
         }
         },
         hoverCenter(){
-            if(this.mobile == false){
-            if(this.youtubeLinks[this.youtubeAcess.id].dentro == false){
-                playenter()
-                this.youtubeAcess.dentro = true
-                this.youtubeLinks[this.youtubeAcess.id].acessou = false
-                this.youtubeLinks[this.youtubeAcess.id].dentro = true
-                this.imVideo = 0
-                this.videos[this.imVideo].hover = true
-            }
-        }
+            
         },
         nightModeA(){
             playToogle()
