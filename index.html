@@ -44,7 +44,7 @@
                 {{ generer.name }}
                </div>
                 <div class="recommend" v-if="where == 0">
-                            <h1>Recommend</h1>
+                            <h1>Animes</h1>
                             <div class="scroll" v-bind:style="{ transform: 'translateX(' + scrollX + '%)'}">
                             <div class="videos" @mouseover="hoverOver(video)" v-for="video in videos" :class="video.hover ? 'videos_ativo' : 'videos_inativo'">
                                 <div class="img_container">

@@ -59,7 +59,7 @@ var app = new Vue({
         imVideo: -1,
         scrollX: 0,
         load: false,
-        generers: [{"id": 0, "name": "Recommended"}],
+        generers: [{"id": 0, "name": "Animes"}],
         where: 0,
         mobile: false
     },
