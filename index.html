@@ -42,9 +42,24 @@
                 <p class="input_seach" type="text">{{ termSearch.letter }}</p>
             </div>
             </div>
+            <div class="recommend" style="top: 6.3em; position: relative;" v-if="searchAnimes.length > 0">
+                <h1>Animes search</h1>
+                <div class="scroll" v-bind:style="{ transform: 'translateX(' + scrollX + '%)'}">
+                <div class="videos" @mouseover="hoverOver(video)" v-for="searchAnime in searchAnimes" :class="searchAnime.hover ? 'videos_ativo' : 'videos_inativo'">
+                    <div class="img_container">
+                        <img :src="video.foto">
+                    </div>
+                    <div class="bottom">
+                        <h1>{{searchAnime.name}}</h1>
+                        <p>{{searchAnime.autor}}</p>
+                        <p>{{ searchAnime.views }} views * {{ searchAnime.date }}</p>
+                    </div>
+                </div>
+        </div>
+        </div>
         </div>
         
-        <div class="center search" v-else-if="youtubeAcess.id == 1">
+        <div class="center search" v-if="youtubeAcess.id == 1">
                <div class="tabs" v-for="generer in generers" :class="where == generer.id ? 'active_tab' : ''" @click="changeTab(generer.id)">
                 {{ generer.name }}
                </div>

@@ -61,7 +61,9 @@ var app = new Vue({
         load: false,
         generers: [{"id": 0, "name": "Animes"}],
         where: 0,
-        mobile: false
+        mobile: false,
+        searchAnimes: [],
+        searchText: ""
     },
     mounted(){
         document.title = this.logo;
@@ -245,11 +247,21 @@ var app = new Vue({
             }  
         },
         search(e){
-            var charTyped = String.fromCharCode(e.which);
+            var charTyped = String.fromCharCode(e.which)
             if (/[a-z\d]/i.test(charTyped)) {
                 this.termSearchs.push({
                     letter: e.key
                 })
+                this.searchText = ""
+                for(var i = 0; i < this.termSearchs.length; i++){
+                    this.searchText += this.termSearchs[i].letter
+                }
+                if(this.mobile){
+                    var animes =  this.videos.filter(function(anime) {
+                        return anime.name == this.searchText;
+                    }); 
+                    this.searchAnimes = animes
+                }
             }
             if(e.key == "Backspace"){
                 if(this.termSearchs.length > 0){
@@ -260,6 +272,17 @@ var app = new Vue({
                 this.termSearchs.push({
                     letter: " "
                 })
+                this.searchText = ""
+                for(var i = 0; i < this.termSearchs.length; i++){
+                    this.searchText += this.termSearchs[i].letter
+                }
+            }
+            if(e.which == 13){
+                var animes =  this.videos.filter(function(anime) {
+                    return anime.name == this.searchText;
+                }); 
+                console.log(animes.length)
+                this.searchAnimes = animes
             }
         },
         changeTab(tab){
