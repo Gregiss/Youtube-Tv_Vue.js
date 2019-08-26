@@ -25,17 +25,9 @@
     },
     {
         "name" : "Fairy Tail",
-        "foto" : "https://www.otakupt.com/wp-content/uploads/2018/10/Fairy-Tail-3-O-in%C3%ADcio-Epis%C3%B3dio-1-1.jpg",
+        "foto" : "https://animezeira.com/wp-content/uploads/2019/01/fairytale_1600x900_0.jpg",
         "autor" : "Hiro Mashima",
         "views" : 70,
-        "date" : "5 hours ago",
-        "hover": false
-    },
-    {
-        "name" : "Bleach",
-        "foto" : "https://dw9to29mmj727.cloudfront.net/promo/2016/5254-SeriesHeaders_BLH_2000x800v2.jpg",
-        "autor" : "Shueisha",
-        "views" : 20,
         "date" : "5 hours ago",
         "hover": false
     },
