@@ -169,14 +169,13 @@ p{
 
 .videos{
     position: relative;
-    width: 400px;
-    height: 390px;
     left: 1vw;
     display: inline-block;
     margin-left: 2vw;
     overflow: hidden;
     transition: 0.6s;
-    cursor: pointer
+    cursor: pointer;
+    padding-bottom: 2vw;
 }
 
 .videos_inativo{
