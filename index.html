@@ -23,14 +23,14 @@
         <div class="splash" v-if="!load">
         </div>
 
-        <div class="left">
+        <div class="left" @mouseover="hoverLeft()">
             <div class="logo"></div>
             <a v-for="youtubeLink in youtubeLinks " :class="youtubeLink.dentro ? 'active_link' : nothing() || youtubeLink.acessou ? 'active_link_bar' : ''" @click="acessar(youtubeLink)">
             <span><i :class="youtubeLink.have_icon ? youtubeLink.icon : ''"></i></span></a>
         </div>
 
         <!-- search -->
-        <div class="center search" v-if="youtubeAcess.id == 0" tabindex="-1" @keyup="search($event)">
+        <div class="center search" @mouseover="hoverCenter()" v-if="youtubeAcess.id == 0" tabindex="-1" @keyup="search($event)">
             <div v-if="mobile">
                 <input type="text" placeholder="Search">
             </div>
@@ -59,7 +59,7 @@
         </div>
         </div>
         
-        <div class="center search" v-if="youtubeAcess.id == 1">
+        <div class="center search" @mouseover="hoverCenter()" v-if="youtubeAcess.id == 1">
                <div class="tabs" v-for="generer in generers" :class="where == generer.id ? 'active_tab' : ''" @click="changeTab(generer.id)">
                 {{ generer.name }}
                </div>

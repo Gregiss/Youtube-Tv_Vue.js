@@ -232,6 +232,7 @@ var app = new Vue({
             }
         },
         hoverOver(video){
+            if(this.youtubeLinks[this.youtubeAcess.id].dentro){
             playair()
             const index = this.videos.indexOf(video)
             this.imVideo = index
@@ -245,6 +246,7 @@ var app = new Vue({
                 }
                 this.videos[this.imVideo].hover = true
             }  
+        }
         },
         search(e){
             var charTyped = String.fromCharCode(e.which)
@@ -283,6 +285,26 @@ var app = new Vue({
                 }); 
                 console.log(animes.length)
                 this.searchAnimes = animes
+            }
+        },
+        hoverLeft(){
+            if(this.youtubeLinks[this.youtubeAcess.id].dentro){
+                playToogle()
+                this.youtubeAcess.dentro = false
+                this.youtubeLinks[this.youtubeAcess.id].acessou = true
+                this.youtubeLinks[this.youtubeAcess.id].dentro = false
+                this.imVideo = 0
+                this.videos[this.imVideo].hover = false
+            }
+        },
+        hoverCenter(){
+            if(this.youtubeLinks[this.youtubeAcess.id].dentro == false){
+                playenter()
+                this.youtubeAcess.dentro = true
+                this.youtubeLinks[this.youtubeAcess.id].acessou = false
+                this.youtubeLinks[this.youtubeAcess.id].dentro = true
+                this.imVideo = 0
+                this.videos[this.imVideo].hover = true
             }
         },
         changeTab(tab){
