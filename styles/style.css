@@ -70,6 +70,7 @@ body,html{
     transform: translate(-50%);
     top: 0%;
     outline: none;
+    color: #fff !important; 
 }
 
 .left .logo{
@@ -445,8 +446,12 @@ button:hover{
     background: #f3f3f3 !important;
 }
 
-.white .videos p, h1{
+.white p, h1{
     color: #151515;
+}
+
+.night p, h1{
+    color: #fff;
 }
 
 .white .center{
