@@ -446,11 +446,11 @@ button:hover{
     background: #f3f3f3 !important;
 }
 
-.white p, h1{
+.white{
     color: #151515;
 }
 
-.night p, h1{
+.night{
     color: #fff;
 }
 
