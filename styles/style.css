@@ -344,7 +344,7 @@ p{
 
     .videos{
         width: 49vw !important;
-        height: 70vw !important;
+        height: 40vw !important;
         padding: 1vw;
     }
 
@@ -412,7 +412,7 @@ p{
 
 .mobile .scroll .videos{
     width: 41vw !important;
-    height: 83vw !important;
+    height: 70vw !important;
     padding: 1vw;
     left: 3vw !important;
     top: -2vw;
@@ -445,9 +445,8 @@ button:hover{
     background: #f3f3f3 !important;
 }
 
-.white .videos{
-    background: #009688;
-    color: #fff;
+.white .videos p, h1{
+    color: #151515;
 }
 
 .white .center{
@@ -474,10 +473,6 @@ button:hover{
 
 .white .active_link{
     color: #cecece !important;
-}
-
-.white .videos_ativo{
-    background: #114641;
 }
 
 .anime_view .img_container{
