@@ -450,6 +450,22 @@ button:hover{
     color: #151515;
 }
 
+.white .videos h1{
+    color: #151515;
+}
+
+.white .videos p{
+    color: #151515;
+}
+
+.night .videos h1{
+    color: #fff;
+}
+
+.night .videos p{
+    color: #fff;
+}
+
 .night{
     color: #fff;
 }
