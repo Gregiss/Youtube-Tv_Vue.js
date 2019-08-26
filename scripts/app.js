@@ -9,7 +9,7 @@ function playToogle(){
 	setTimeout(function(){
 	toggle.pause();
 	toggle.currentTime = 0;
-	}, 100);
+	}, 300);
 }
 
 function playBlock(){
@@ -17,7 +17,7 @@ function playBlock(){
 	setTimeout(function(){
 	block.pause();
 	block.currentTime = 0;
-	}, 100);
+	}, 300);
 }
 
 function playlight(){
@@ -25,7 +25,7 @@ function playlight(){
 	setTimeout(function(){
     light.pause();
     light.currentTime = 0;
-	}, 100);
+	}, 300);
 }
 
 function playenter(){
@@ -50,7 +50,8 @@ var app = new Vue({
         youtube: null,
         youtubeLinks: [
         {"name" : "search", "icon" : "fas fa-search", "have_icon" : true, "acessou" : false, "dentro": false},
-        {"name" : "home", "icon" : "fas fa-home", "have_icon" : true, "acessou" : true,  "dentro": false}
+        {"name" : "home", "icon" : "fas fa-home", "have_icon" : true, "acessou" : true,  "dentro": false},
+        {"name" : "settings", "icon" : "fas fa-cogs", "have_icon" : true, "acessou" : false,  "dentro": false}
         ],
         logo: "NekoApp",
         youtubeAcess: {"id": 1, "dentro": false},
@@ -63,10 +64,12 @@ var app = new Vue({
         where: 0,
         mobile: false,
         searchAnimes: [],
-        searchText: ""
+        searchText: "",
+        nightMode: true
     },
     mounted(){
         document.title = this.logo;
+        this.nightMode = localStorage.nightMode ? JSON.parse(localStorage.nightMode): []
         this.getJson()
         this.load = true
         var width = screen.width
@@ -314,6 +317,15 @@ var app = new Vue({
                 this.videos[this.imVideo].hover = true
             }
         }
+        },
+        nightModeA(){
+            playToogle()
+            if(this.nightMode){
+                this.nightMode = false
+            } else{
+                this.nightMode = true
+            }
+            localStorage.nightMode = JSON.stringify(this.nightMode)
         },
         changeTab(tab){
             this.where = tab

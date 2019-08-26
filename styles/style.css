@@ -72,7 +72,6 @@ body,html{
     outline: none;
 }
 
-
 .left .logo{
     background-position: center;
     background-repeat: no-repeat;
@@ -417,4 +416,63 @@ p{
     padding: 1vw;
     left: 3vw !important;
     top: -2vw;
+}
+
+button{
+    width: 200px;
+    background: #6a6a6a;
+    outline: none;
+    border: none;
+    padding: 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 22px;
+    position: relative;
+    left: 20px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+button:hover{
+    background: #4a4a4a;
+}
+
+.white{
+    background: #cecece !important;
+}
+
+.white .videos{
+    background: var(--body);
+    color: #fff;
+}
+
+.white .center{
+    color: #151515;
+}
+
+.white .active_tab{
+    background: var(--body);
+    color: #fff;
+}
+
+.white .left{
+    background: #fff;
+    color: #151515;
+}
+
+.white .active_link_bar{
+    background: var(--body);
+    color: #fff !important;
+}
+
+.white .center{
+    color: #151515 !important;
+}
+
+.white .active_link{
+    color: #151515 !important;
+}
+
+.white .videos_ativo{
+    background: #151515;
 }

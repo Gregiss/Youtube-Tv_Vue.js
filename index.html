@@ -17,8 +17,9 @@
     <title>Youtube</title>
 </head>
 <body>
-    <div id="app" tabindex="-1"
+    <div id="app" :class="nightMode ? 'night' : 'white'" tabindex="-1"
     v-on:keyup="keyBoard($event)">
+        <div >
         <div :class="mobile ? 'mobile' : ''">
         <div class="splash" v-if="!load">
         </div>
@@ -58,6 +59,15 @@
         </div>
         </div>
         </div>
+
+        <div class="center search" @mouseover="hoverCenter()" v-if="youtubeAcess.id == 2" tabindex="-1" @keyup="search($event)">
+            <h1>Settings</h1>
+
+            <p>Night mode</p>
+            <button v-if="nightMode" @click="nightModeA">Desativar</button>
+            <button v-else="" @click="nightModeA">Ativar</button>
+
+        </div>
         
         <div class="center search" @mouseover="hoverCenter()" v-if="youtubeAcess.id == 1">
                <div class="tabs" v-for="generer in generers" :class="where == generer.id ? 'active_tab' : ''" @click="changeTab(generer.id)">
@@ -84,6 +94,7 @@
             </div>
             </div>
             </div>
+             </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
