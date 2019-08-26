@@ -233,6 +233,7 @@ var app = new Vue({
                     this.animeViewTs = this.videos[this.imVideo]
                 }
                 if(e.which == 27){
+                    if(!this.animeView){
                     playToogle()
                     for(var i = 0; i < this.youtubeLinks.length;i++){
                         this.youtubeLinks[i].dentro = false
@@ -246,6 +247,9 @@ var app = new Vue({
                     this.imVideo = -1
                     this.scrollX = 0
                 }
+            } else{
+                this.animeView = false
+            }
             
             }
         },
