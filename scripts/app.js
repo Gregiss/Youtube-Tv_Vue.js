@@ -250,6 +250,10 @@ var app = new Vue({
             }
         },
         hoverOver(video){
+            if(this.youtubeAcess.id == 1){
+                this.youtubeAcess.dentro = true
+                this.youtubeLinks[this.youtubeAcess.id].dentro = true
+            }
             if(this.youtubeLinks[this.youtubeAcess.id].dentro){
             playair()
             const index = this.videos.indexOf(video)
@@ -263,7 +267,7 @@ var app = new Vue({
                     this.videos[i].hover = false
                 }
                 this.videos[this.imVideo].hover = true
-            }  
+            }
         }
         },
         search(e){
@@ -322,7 +326,16 @@ var app = new Vue({
         }
         },
         hoverCenter(){
-            
+            if(this.mobile == false){
+            if(this.youtubeLinks[this.youtubeAcess.id].dentro == false){
+                playenter()
+                this.youtubeAcess.dentro = true
+                this.youtubeLinks[this.youtubeAcess.id].acessou = false
+                this.youtubeLinks[this.youtubeAcess.id].dentro = true
+                this.imVideo = 0
+                this.videos[this.imVideo].hover = true
+            }
+        }
         },
         nightModeA(){
             playToogle()
