@@ -413,7 +413,7 @@ p{
 .mobile .scroll .videos{
     width: 41vw !important;
     height: 75vw !important;
-    padding: 3vw;
-    left: 0vw;
+    padding: 1vw;
+    left: 3vw !important;
     top: -2vw;
 }
