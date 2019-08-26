@@ -113,7 +113,9 @@ var app = new Vue({
                         }
                         this.youtubeLinks[this.youtubeAcess.id].acessou = true
                     } else{
+                        playBlock()
                     }
+                    
                 }
             }
             if(e.which == 40){
