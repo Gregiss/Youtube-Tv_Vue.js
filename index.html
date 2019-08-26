@@ -19,7 +19,7 @@
 <body>
     <div id="app" tabindex="-1"
     v-on:keyup="keyBoard($event)">
-
+        <div :class="mobile ? 'mobile' : ''">
         <div class="splash" v-if="!load">
         </div>
 
@@ -63,7 +63,7 @@
                             <div class="scroll" v-bind:style="{ transform: 'translateX(' + scrollX + 'vw)'}">
                             <div class="videos" @mouseover="hoverOver(video)" v-for="video in videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[1].shelfRenderer.content.horizontalListRenderer.items" :class="video.gridVideoRenderer.hover ? 'videos_ativo' : 'videos_inativo'">
                                 <div class="img_container">
-                                    <img :src="video.gridVideoRenderer.thumbnail.thumbnails[2].url">
+                                    <img :src="video.gridVideoRenderer.thumbnail.thumbnails[4].url">
                                 </div>
                                 <div class="bottom">
                                     <h1>{{video.gridVideoRenderer.title.runs[0].text}}</h1>
@@ -74,6 +74,7 @@
                 </div>
 
 
+            </div>
             </div>
             </div>
             </div>

@@ -209,9 +209,12 @@ p{
 
 
 .scroll{
-    max-width: 100vw;
+    max-width: 100%;
+    position: absolute;
     white-space: nowrap;
     transition: 0.5s cubic-bezier(0.4, 0, 1, 1);
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .videos{
@@ -271,7 +274,25 @@ p{
     color: #2f2f2f;
 }
 
-@media screen and (max-width: 1000px){
+.mobile .left{
+    font-size: 20px;
+    left: -47px;
+}
+
+.mobile .left a span{
+    left: -0.6em;
+}
+
+.mobile .left .logo{
+    left: 0.7em;
+    position: relative;
+}
+
+.mobile .center{
+    left: 7em;
+}
+
+@media screen and (max-width: 800px){
     #app{
         width: 100%;
     }
@@ -280,4 +301,56 @@ p{
         width: 100%;
         left: 10em;
     }
+
+    .videos{
+        width: 30vw;
+        height: 40vw;
+    }
+
+    .videos .bottom h1{
+        font-size: 3vw !important;
+    }
+
+    .videos .bottom p{
+        font-size: 1.7vw !important;
+    }
+
+    .videos .img_container{
+        height: 21vw;
+    }
+
+}
+
+@media screen and (max-width: 800px){
+
+    .left{
+        font-size: 20px;
+    }
+
+    .scroll{
+        position: relative;
+        left: 0vw !important;
+    }
+
+    .videos{
+        width: 49vw !important;
+        height: 70vw !important;
+        padding: 1vw;
+    }
+
+    .videos .img_container{
+        height: 30vw;
+    }
+}
+
+.mobile .videos .bottom h1{
+    font-size: 5vw !important;
+}
+
+.mobile .videos .bottom h1,p{
+    left: 2vw;
+}
+
+.mobile .videos .bottom p{
+    font-size: 3.7vw !important;
 }

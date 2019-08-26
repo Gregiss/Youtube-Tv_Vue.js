@@ -60,12 +60,19 @@ var app = new Vue({
         scrollX: 0,
         load: false,
         generers: [{"id": 0, "name": "Recommended"}],
-        where: 0
+        where: 0,
+        mobile: false
     },
     mounted(){
         document.title = this.logo;
         this.getJson()
         this.load = true
+        var width = screen.width
+        if (width <= 800){
+            this.mobile = true
+        } else{
+            this.mobile = false
+        }
     },
     methods: {
         getJson(){
@@ -210,7 +217,12 @@ var app = new Vue({
             playair()
             const index = this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items.indexOf(video)
             this.imVideo = index
-            this.scrollX = this.imVideo * 1.1 * 20 * -1
+            var width = screen.width
+            if (width <= 800){
+                this.scrollX = 0
+            } else{
+                this.scrollX = this.imVideo * 1.1 * 20 * -1
+            }
             for(var i = 0; i < this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items.length; i++){
                 this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items[i].gridVideoRenderer.hover = false
             }
