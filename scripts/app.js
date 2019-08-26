@@ -67,7 +67,8 @@ var app = new Vue({
         searchText: "",
         nightMode: true,
         animeView: false,
-        animeViewTs: []
+        animeViewTs: [],
+        logoAnimate: false
     },
     mounted(){
         document.title = this.logo;
@@ -361,6 +362,21 @@ var app = new Vue({
         },
         voltarNavegacao(){
             this.animeView = false
+        },
+        hoverLogo(){
+            this.logoAnimate = true
+        },
+        outLogo(){
+            this.logoAnimate = false
+        },
+        logoAnimate(){
+            if(this.mobile){
+                if(this.logoAnimate){
+                    this.logoAnimate = false
+                } else{
+                    this.logoAnimate = true
+                }
+            }
         },
         nothing(){
             console.log("nothing")

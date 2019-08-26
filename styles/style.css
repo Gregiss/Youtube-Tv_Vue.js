@@ -74,6 +74,7 @@ body,html{
 }
 
 .left .logo{
+    transform: rotate(-90deg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -81,6 +82,14 @@ body,html{
     width: 5rem;
     background-image: url('../img/logo.png');
     margin: 2.5rem 1.5rem 2.5rem 2rem;
+    position: relative;
+    left: 65px;
+    transition: left 1s ease;
+    cursor: pointer;
+}
+
+.left .logo_ativa{
+    left: 50px;
 }
 
 .left a{
@@ -297,6 +306,13 @@ p{
 .mobile .left .logo{
     left: 0.7em;
     position: relative;
+    transform: rotate(0deg);
+    top: -1.3em;
+    transition: top 1s ease;
+}
+
+.mobile .left .logo_ativa{
+    top: -2.4em;
 }
 
 .mobile .center{
@@ -384,7 +400,6 @@ p{
 .mobile .left .logo{
     left: -0.7em;
     position: relative;
-    top: -2.3em;
 }
 
 .mobile .left {

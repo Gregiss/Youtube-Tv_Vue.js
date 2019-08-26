@@ -25,7 +25,7 @@
         </div>
 
         <div class="left" @mouseover="hoverLeft()">
-            <div class="logo"></div>
+            <div class="logo" @click="logoAnimate" @mouseover="hoverLogo()" @mouseout="outLogo()" :class="logoAnimate ? 'logo_ativa' : '' "></div>
             <a v-for="youtubeLink in youtubeLinks " :class="youtubeLink.dentro ? 'active_link' : nothing() || youtubeLink.acessou ? 'active_link_bar' : ''" @click="acessar(youtubeLink)">
             <span><i :class="youtubeLink.have_icon ? youtubeLink.icon : ''"></i></span></a>
         </div>
