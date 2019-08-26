@@ -158,6 +158,8 @@ var app = new Vue({
                 this.youtubeAcess.dentro = true
                 this.youtubeLinks[this.youtubeAcess.id].acessou = false
                 this.youtubeLinks[this.youtubeAcess.id].dentro = true
+                this.imVideo = 0
+                this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items[this.imVideo].gridVideoRenderer.hover = true
                 }
             }
             if(e.which == 27){
@@ -193,7 +195,7 @@ var app = new Vue({
                         this.imVideo--
                         this.scrollX = this.imVideo * 1 * 3.7 * -1
                     } else{
-                        playBlock()
+                        playToogle()
                         for(var i = 0; i < this.youtubeLinks.length;i++){
                             this.youtubeLinks[i].dentro = false
                             this.youtubeLinks[i].acessou = false
