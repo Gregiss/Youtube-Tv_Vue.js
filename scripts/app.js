@@ -65,7 +65,9 @@ var app = new Vue({
         mobile: false,
         searchAnimes: [],
         searchText: "",
-        nightMode: true
+        nightMode: true,
+        animeView: false,
+        animeViewTs: []
     },
     mounted(){
         document.title = this.logo;
@@ -176,6 +178,7 @@ var app = new Vue({
                 this.youtubeLinks[this.youtubeAcess.id].dentro = false
             }
             if(this.youtubeLinks[1].dentro){
+                if(!this.animeView){
                 if(e.which == 39){
                     var max = this.videos.length
                     console.log(max)
@@ -193,7 +196,9 @@ var app = new Vue({
                     }
                     this.videos[this.imVideo].hover = true
                 }
+                }
                 if(e.which == 37){
+                    if(!this.animeView){
                     var max = this.videos.length
                     for(var i = 0; i < this.videos.length; i++){
                         this.videos[i].hover = false
@@ -217,6 +222,11 @@ var app = new Vue({
                         this.scrollX = 0
                     }
                     this.videos[this.imVideo].hover = true
+                }
+                }
+                if(e.which == 13){
+                    this.animeView = true
+                    this.animeViewTs = this.videos[this.imVideo]
                 }
                 if(e.which == 27){
                     playToogle()
@@ -329,6 +339,13 @@ var app = new Vue({
         },
         changeTab(tab){
             this.where = tab
+        },
+        openAnime(anime){
+            this.animeView = true
+            this.animeViewTs = anime
+        },
+        voltarNavegacao(){
+            this.animeView = false
         },
         nothing(){
             console.log("nothing")

@@ -68,15 +68,28 @@
             <button v-else="" @click="nightModeA">Ativar</button>
 
         </div>
+
+        <div class="center search transitionwow" @mouseover="hoverCenter()" v-if="youtubeAcess.id == 1 && animeView" tabindex="-1">
+            <div class="anime_view">
+            <div class="voltar" @click="voltarNavegacao">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <h1>{{ animeViewTs.name }}</h1>
+            <div class="img_container"  v-bind:style="{ backgroundImage: 'url('+animeViewTs.foto+')'}" >
+            </div>
+            <p>{{animeViewTs.autor}}</p>
+            <p>{{ animeViewTs.views }} views * {{ animeViewTs.date }}</p>
+            </div>
+        </div>
         
-        <div class="center search" @mouseover="hoverCenter()" v-if="youtubeAcess.id == 1">
+        <div class="center search" @mouseover="hoverCenter()" v-if="!animeView">
                <div class="tabs" v-for="generer in generers" :class="where == generer.id ? 'active_tab' : ''" @click="changeTab(generer.id)">
                 {{ generer.name }}
                </div>
                 <div class="recommend" v-if="where == 0">
                             <h1>Animes</h1>
                             <div class="scroll" v-bind:style="{ transform: 'translateX(' + scrollX + '%)'}">
-                            <div class="videos" @mouseover="hoverOver(video)" v-for="video in videos" :class="video.hover ? 'videos_ativo' : 'videos_inativo'">
+                            <div class="videos" @mouseover="hoverOver(video)" v-for="video in videos" :class="video.hover ? 'videos_ativo' : 'videos_inativo'" @click="openAnime(video)">
                                 <div class="img_container">
                                     <img :src="video.foto">
                                 </div>
@@ -97,7 +110,7 @@
              </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="./scripts/app.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./scripts/app.js"></script>
 </body>
 </html>
