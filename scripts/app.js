@@ -207,6 +207,7 @@ var app = new Vue({
             }
         },
         hoverOver(video){
+            playair()
             const index = this.videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[0].shelfRenderer.content.horizontalListRenderer.items.indexOf(video)
             this.imVideo = index
             this.scrollX = this.imVideo * 22.9 * -1
