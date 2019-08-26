@@ -171,9 +171,9 @@ p{
     position: relative;
     width: 400px;
     height: 390px;
-    left: 20px;
+    left: 1vw;
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 2vw;
     overflow: hidden;
     transition: 0.6s;
     cursor: pointer
@@ -216,20 +216,20 @@ p{
 }
 
 .videos{
-    width: 300px;
-    height: 310px;
+    width: 20vw;
+    height: 23vw;
 }
 
 .videos .bottom h1, p{
-    font-size: 0.9em !important;
+    font-size: 1.5vw !important;
 }
 
 .videos p{
-    font-size: 1.1em !important;
+    font-size: 1.2vw !important;
 }
 
 .input_seach{
-    font-size: 2em !important;
+    font-size: 2vw !important;
 }
 
 .splash{

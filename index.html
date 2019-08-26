@@ -60,7 +60,7 @@
 
                  <div class="recommend" v-if="where == 1">
                             <h1>Latest</h1>
-                            <div class="scroll" v-bind:style="{ transform: 'translateX(' + scrollX + '%)'}">
+                            <div class="scroll" v-bind:style="{ transform: 'translateX(' + scrollX + 'vw)'}">
                             <div class="videos" @mouseover="hoverOver(video)" v-for="video in videos.contents.tvBrowseRenderer.content.tvSecondaryNavRenderer.sections[0].tvSecondaryNavSectionRenderer.tabs[0].tabRenderer.content.tvSurfaceContentRenderer.content.sectionListRenderer.contents[1].shelfRenderer.content.horizontalListRenderer.items" :class="video.gridVideoRenderer.hover ? 'videos_ativo' : 'videos_inativo'">
                                 <div class="img_container">
                                     <img :src="video.gridVideoRenderer.thumbnail.thumbnails[2].url">
