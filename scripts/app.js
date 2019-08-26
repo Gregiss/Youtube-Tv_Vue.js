@@ -173,9 +173,13 @@ var app = new Vue({
                 }
             }
             if(e.which == 27){
+                if(!this.animeView){
                 this.youtubeAcess.dentro = false
                 this.youtubeLinks[this.youtubeAcess.id].acessou = true
                 this.youtubeLinks[this.youtubeAcess.id].dentro = false
+                } else{
+                    this.animeView = false
+                }
             }
             if(this.youtubeLinks[1].dentro){
                 if(!this.animeView){
@@ -242,6 +246,7 @@ var app = new Vue({
                     this.imVideo = -1
                     this.scrollX = 0
                 }
+            
             }
         },
         hoverOver(video){
