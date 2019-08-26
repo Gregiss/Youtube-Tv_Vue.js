@@ -282,6 +282,7 @@ var app = new Vue({
         }
         },
         search(e){
+            if(this.youtubeAcess.id == 0){
             var charTyped = String.fromCharCode(e.which)
             if (/[a-z\d]/i.test(charTyped)) {
                 this.termSearchs.push({
@@ -319,6 +320,7 @@ var app = new Vue({
                 console.log(animes.length)
                 this.searchAnimes = animes
             }
+        }
         },
         hoverLeft(){
             if(this.mobile == false){
@@ -376,6 +378,8 @@ var app = new Vue({
         saveColor(){
             localStorage.cor_primary = JSON.stringify(this.cor_primary)
             localStorage.cor_secundary = JSON.stringify(this.cor_secundary)
+            this.termSearchs = []
+            this.searchText = ""
         },
         logoAnimatar(){
             if(this.mobile){
