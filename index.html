@@ -31,11 +31,16 @@
 
         <!-- search -->
         <div class="center search" v-if="youtubeAcess.id == 0" tabindex="-1" @keyup="search($event)">
+            <div v-if="mobile">
+                <input type="text" placeholder="Search">
+            </div>
+            <div v-else="">
             <div v-if="termSearchs.length == 0">
                     <p class="input_seach" type="text" placeholder="Search">Search</p>
             </div>
             <div v-else="" v-for="termSearch in termSearchs">
                 <p class="input_seach" type="text">{{ termSearch.letter }}</p>
+            </div>
             </div>
         </div>
         
