@@ -73,7 +73,9 @@ var app = new Vue({
         document.title = this.logo;
         this.nightMode = localStorage.nightMode ? JSON.parse(localStorage.nightMode): []
         this.getJson()
+        setTimeout(function(){
         this.load = true
+        }, 4000);
         var width = screen.width
         if (width <= 1000){
             this.mobile = true
