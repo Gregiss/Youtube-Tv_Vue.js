@@ -288,6 +288,7 @@ var app = new Vue({
             }
         },
         hoverLeft(){
+            if(this.mobile == false){
             if(this.youtubeLinks[this.youtubeAcess.id].dentro){
                 playToogle()
                 this.youtubeAcess.dentro = false
@@ -296,8 +297,10 @@ var app = new Vue({
                 this.imVideo = 0
                 this.videos[this.imVideo].hover = false
             }
+        }
         },
         hoverCenter(){
+            if(this.mobile == false){
             if(this.youtubeLinks[this.youtubeAcess.id].dentro == false){
                 playenter()
                 this.youtubeAcess.dentro = true
@@ -306,6 +309,7 @@ var app = new Vue({
                 this.imVideo = 0
                 this.videos[this.imVideo].hover = true
             }
+        }
         },
         changeTab(tab){
             this.where = tab
