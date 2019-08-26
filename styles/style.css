@@ -437,6 +437,10 @@ button:hover{
     background: #4a4a4a;
 }
 
+.mobile .center h1{
+    font-size: 7vw;
+}
+
 .white{
     background: #cecece !important;
 }
