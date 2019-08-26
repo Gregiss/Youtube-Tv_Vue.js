@@ -521,3 +521,26 @@ button:hover{
     position: relative;
     top: 0.1em;
 }
+
+.mobile .anime_view h1{
+    font-size: 9vw !important;
+    left: 40vw;
+    top: 52vw;
+}
+
+.anime_view .voltar{
+    z-index: 1000;
+    box-shadow: 0 0 0.75rem 0 rgba(0,0,0,0.24), 0 0 0.75rem 0 rgba(0,0,0,0.48);
+}
+
+.mobile .anime_view p{
+    font-size: 6vw !important;
+    top: 30vw;
+}
+
+.mobile .anime_view .img_container{
+    width: 40vw;
+    height: 60vw;
+    top: 30vw;
+    left: 2vw;
+}
