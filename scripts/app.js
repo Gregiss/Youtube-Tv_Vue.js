@@ -70,7 +70,7 @@ var app = new Vue({
         this.getJson()
         this.load = true
         var width = screen.width
-        if (width <= 800){
+        if (width <= 1000){
             this.mobile = true
         } else{
             this.mobile = false
