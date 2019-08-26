@@ -290,11 +290,15 @@ var app = new Vue({
         hoverLeft(){
             if(this.mobile == false){
             if(this.youtubeLinks[this.youtubeAcess.id].dentro){
+                for(var i = 0; i < this.videos.length; i++){
+                    this.videos[i].hover = false
+                }
                 playToogle()
                 this.youtubeAcess.dentro = false
                 this.youtubeLinks[this.youtubeAcess.id].acessou = true
                 this.youtubeLinks[this.youtubeAcess.id].dentro = false
                 this.imVideo = 0
+                this.scrollX = this.imVideo * 1 * 9.7 * -1
                 this.videos[this.imVideo].hover = false
             }
         }
