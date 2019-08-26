@@ -466,6 +466,18 @@ button:hover{
     color: #fff;
 }
 
+.night .videos_ativo p{
+    color: #151515 !important;
+}
+
+.night .videos_ativo h1{
+    color: #151515 !important;
+}
+
+.night .videos_inativo{
+    color: #fff !important;
+}
+
 .night{
     color: #fff;
 }
