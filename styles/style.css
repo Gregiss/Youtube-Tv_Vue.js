@@ -116,7 +116,8 @@ body,html{
 .left{
     color: #fff;
     font-size: 2em;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     position: fixed;
     height: 100%;
     background: #282828;
