@@ -59,8 +59,7 @@ var app = new Vue({
         imVideo: -1,
         scrollX: 0,
         load: false,
-        generers: [{"id": 0, "name": "Recommended"},{"id": 1, "name": "Latest"},{"id": 2, "name": "Music"},
-        {"id": 3, "name": "Entertainment"},{"id": 4, "name": "Gaming"}],
+        generers: [{"id": 0, "name": "Recommended"}],
         where: 0
     },
     mounted(){
