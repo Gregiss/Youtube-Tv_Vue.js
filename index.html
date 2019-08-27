@@ -18,7 +18,7 @@
 </head>
 <body>
     <div id="app" :class="nightMode ? 'night' : 'white'" tabindex="-1"
-    v-on:keyup="keyBoard($event)">
+    v-on:keyup="keyBoard($event)" :style="{ backgroundColor: cor_primary + 'a6' } ">
         <div >
         <div :class="mobile ? 'mobile' : ''">
         <div class="splash" v-if="!load">
