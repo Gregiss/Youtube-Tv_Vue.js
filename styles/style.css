@@ -92,14 +92,6 @@ body,html{
     left: 50px;
 }
 
-.night input{
-    color: #fff;
-}
-
-.white input{
-    color: #151515;
-}
-
 .left a{
     color: rgb(106, 106, 106);
     padding: 0.975em 0 1.055em 3.475em;
@@ -602,4 +594,12 @@ button:hover{
     height: 60vw;
     top: 30vw;
     left: 2vw;
+}
+
+.night input{
+    color: #fff;
+}
+
+.white input{
+    color: #151515;
 }
