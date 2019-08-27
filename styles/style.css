@@ -208,6 +208,12 @@ p{
     margin-right: 2.6vw;
 }
 
+.mobile .videos_ativo{
+    transform: scale(1);
+    margin-left: 0vw;
+    margin-right: 0vw;
+}
+
 .videos_inativo p{
     color: #ddd;
 }
