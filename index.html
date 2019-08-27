@@ -31,7 +31,7 @@
         </div>
 
         <!-- search -->
-        <div class="center search" v-if="youtubeAcess.id == 0" tabindex="-1" @keyup="search($event)">
+        <div class="center search" :style="{ backgroundColor: cor_primary + 'a6' } " v-if="youtubeAcess.id == 0" tabindex="-1" @keyup="search($event)">
             <div v-if="mobile">
                 <input type="text" placeholder="Search">
             </div>
@@ -60,7 +60,7 @@
         </div>
         </div>
 
-        <div class="center search" v-if="youtubeAcess.id == 2" tabindex="-1" @keyup="search($event)">
+        <div class="center search" :style="{ backgroundColor: cor_primary + 'a6' } " v-if="youtubeAcess.id == 2" tabindex="-1" @keyup="search($event)">
             <h1>Settings</h1>
 
             <h1>Night mode</h1>
@@ -74,7 +74,7 @@
 
         </div>
 
-        <div class="center search transitionwow" v-if="youtubeAcess.id == 1 && animeView" tabindex="-1">
+        <div class="center search transitionwow" :style="{ backgroundColor: cor_primary + 'a6' } " v-if="youtubeAcess.id == 1 && animeView" tabindex="-1">
             <div class="anime_view">
             <div class="voltar" @click="voltarNavegacao">
                 <i class="fas fa-arrow-left"></i>
@@ -87,7 +87,7 @@
             </div>
         </div>
         
-        <div class="center search" v-if="youtubeAcess.id == 1 && !animeView">
+        <div class="center search" :style="{ backgroundColor: cor_primary + 'a6' } " v-if="youtubeAcess.id == 1 && !animeView">
                <div class="tabs" v-for="generer in generers" :class="where == generer.id ? 'active_tab' : ''" @click="changeTab(generer.id)">
                 {{ generer.name }}
                </div>
