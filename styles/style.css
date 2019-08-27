@@ -229,7 +229,7 @@ p{
     max-width: auto;
     position: absolute;
     white-space: nowrap;
-    transition: 0.5s cubic-bezier(0.4, 0, 1, 1);
+    transition: 1.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     overflow-x: auto;
     overflow-y: hidden;
     overflow-x: hidden;
